@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage
+.nyc_output
+
+# Temp files
+*.txt
+*.tmp
+
+# Uploads (keep folder structure)
+uploads/*
+!uploads/.gitkeep
+
