@@ -15,11 +15,11 @@ const Navbar = () => {
     return (
         <nav style={{
             borderBottom: '1px solid var(--border)',
-            padding: '0.5rem 1rem',
+            padding: '0.75rem 2rem',
             backgroundColor: 'var(--card)',
             color: 'var(--foreground)'
         }}>
-            <div className="container flex justify-between items-center">
+            <div className="w-full flex justify-between items-center">
                 <Link to="/" style={{ textDecoration: 'none', color: 'var(--foreground)', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     <img src="/logo.png" alt="Notinix Logo" style={{ height: '36px', width: 'auto' }} />
                     <span style={{
@@ -35,7 +35,7 @@ const Navbar = () => {
                     </span>
                 </Link>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 ml-auto">
                     {user ? (
                         <div className="flex items-center gap-3">
                             <span className="text-[var(--muted-foreground)] text-sm hidden md:inline">Welcome, {user.username}</span>
