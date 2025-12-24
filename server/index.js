@@ -32,7 +32,10 @@ app.use((req, res, next) => {
 
 // Serve Static Files
 app.use('/uploads', express.static('uploads'));
-app.use(express.static(path.join(__dirname, '../client/dist')));
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
+}
 
 
 
@@ -64,7 +67,11 @@ app.get(/.*/, (req, res) => {
     if (req.originalUrl.startsWith('/api')) {
         return res.status(404).json({ message: 'API route not found' });
     }
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    if (process.env.NODE_ENV === 'production') {
+        res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    } else {
+        res.status(404).json({ message: 'Not found in development mode. Please use the Vite dev server on port 5173.' });
+    }
 });
 
 // Socket.io Logic

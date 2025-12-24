@@ -39,8 +39,6 @@ const Landing = () => {
                         marginBottom: '1.5rem',
                         fontWeight: '800',
                         letterSpacing: '-0.02em',
-                        letterSpacing: '-0.02em',
-                        letterSpacing: '-0.02em',
                         backgroundImage: theme === 'dark' ? 'linear-gradient(to right, #fff, #999)' : 'linear-gradient(to right, #111, #444)',
                         fontFamily: "'Cal Sans', sans-serif" // Trying to simulate a branding font
                     }} className="text-gradient">

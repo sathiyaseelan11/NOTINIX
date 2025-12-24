@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eye, EyeOff } from 'lucide-react';
@@ -9,10 +9,12 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const { login } = useAuth();
+    const { login, setUser } = useAuth();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
     useEffect(() => {
         if (error) {
@@ -89,8 +91,13 @@ const Login = () => {
                             {loading ? 'Logging in...' : 'Login'}
                         </button>
                     </form>
-                    <p className="text-center text-muted mt-4 text-sm">
-                        Don't have an account? <a href="/register" style={{ color: 'var(--accent-color)' }}>Register</a>
+
+                    <div className="flex justify-center items-center mt-3 text-sm">
+                        <Link to="/forgot-password" className="text-[var(--muted-foreground)] hover:text-[var(--foreground)]">Forgot Password?</Link>
+                    </div>
+
+                    <p className="text-center text-muted mt-6 text-sm">
+                        Don't have an account? <Link to="/register" style={{ color: 'var(--accent-color)' }}>Register</Link>
                     </p>
                 </div>
             </div>

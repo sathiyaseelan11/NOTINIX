@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { register } = useAuth();
+    const { register, setUser } = useAuth();
     const navigate = useNavigate();
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError('');
         try {
             await register(username, email, password);
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -52,10 +59,13 @@ const Register = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <button type="submit" className="btn mt-4">Sign Up</button>
+                        <button type="submit" className="btn mt-4" disabled={loading}>
+                            {loading ? 'Processing...' : 'Sign Up'}
+                        </button>
                     </form>
+
                     <p className="text-center text-muted mt-4 text-sm">
-                        Already have an account? <a href="/login" style={{ color: 'var(--accent-color)' }}>Login</a>
+                        Already have an account? <Link to="/login" style={{ color: 'var(--accent-color)' }}>Login</Link>
                     </p>
                 </div>
             </div>

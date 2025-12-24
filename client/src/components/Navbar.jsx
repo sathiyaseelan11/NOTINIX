@@ -26,8 +26,6 @@ const Navbar = () => {
                         fontSize: '1.5rem',
                         fontWeight: '800',
                         letterSpacing: '-0.02em',
-                        letterSpacing: '-0.02em',
-                        letterSpacing: '-0.02em',
                         backgroundImage: logoGradient,
                         textShadow: theme === 'dark' ? '0 0 20px rgba(255,255,255,0.1)' : 'none'
                     }} className="text-gradient">
