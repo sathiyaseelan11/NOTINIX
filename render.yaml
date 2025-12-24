@@ -3,7 +3,7 @@
 services:
   # Backend API
   - type: web
-    name: notinix-api-sathiya
+    name: notinix-api
     runtime: node
     region: oregon
     plan: free
@@ -18,16 +18,14 @@ services:
         sync: false
       - key: GROQ_API_KEY
         sync: false
-      - key: FRONTEND_URL
-        value: https://notinix-sathiya.onrender.com
       - key: PORT
         value: 10000
 
   # Frontend Static Site
   - type: static
-    name: notinix-sathiya
+    name: notinix-client
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: ./client/dist
     envVars:
       - key: VITE_API_URL
-        value: https://notinix-api-sathiya.onrender.com/api
+        value: https://notinix-api.onrender.com/api
