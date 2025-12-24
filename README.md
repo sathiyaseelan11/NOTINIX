@@ -1,4 +1,4 @@
-# Notinix - AI Second Brain
+# Notinix - Structure notes, connect ideas
 
 Notinix is an AI-powered note management platform designed to centralize your knowledge, automate workflows, and visualize connections between your ideas.
 
