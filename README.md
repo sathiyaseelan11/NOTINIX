@@ -1,5 +1,7 @@
 # Notinix - Structure notes, connect ideas
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sathiyaseelan11/NOTINIX)
+
 Notinix is an AI-powered note management platform designed to centralize your knowledge, automate workflows, and visualize connections between your ideas.
 
 ![Notinix Logo](client/public/logo.png)
