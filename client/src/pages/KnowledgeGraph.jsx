@@ -319,6 +319,18 @@ const KnowledgeGraph = () => {
         return sparkle;
     }, [neighborNodes, theme]);
 
+    // Cleanup intervals on unmount or data change
+    useEffect(() => {
+        return () => {
+            originalData.nodes.forEach(node => {
+                if (node.__rotationInterval) {
+                    clearInterval(node.__rotationInterval);
+                    delete node.__rotationInterval;
+                }
+            });
+        };
+    }, [originalData]);
+
     if (loading) return <LoadingScreen />;
 
     return (

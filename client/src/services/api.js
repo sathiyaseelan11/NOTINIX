@@ -77,7 +77,6 @@ export const aiAPI = {
     autoTagNote: (noteId) => api.post('/ai/auto-tag', { noteId }),
     applyTags: (noteId, tags, priority) => api.post('/ai/apply-tags', { noteId, tags, priority }),
     findRelatedNotes: (noteId, limit = 5) => api.post('/ai/find-related', { noteId, limit }),
-    findRelatedNotes: (noteId, limit = 5) => api.post('/ai/find-related', { noteId, limit }),
     chatWithKnowledge: (query, noteIds = []) => api.post('/ai/chat-knowledge', { query, noteIds }),
     searchNotes: (query) => api.post('/ai/search', { query }), // Legacy
     editText: (text, instruction) => api.post('/ai/edit-text', { text, instruction }),

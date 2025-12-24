@@ -46,3 +46,14 @@ vi.mock('framer-motion', () => ({
     },
     AnimatePresence: ({ children }) => <>{children}</>,
 }));
+
+// Global mocks for Contexts
+vi.mock('./context/ThemeContext', () => ({
+    ThemeProvider: ({ children }) => <>{children}</>,
+    useTheme: () => ({ theme: 'dark', setTheme: vi.fn() }),
+}));
+
+vi.mock('./context/AuthContext', () => ({
+    AuthProvider: ({ children }) => <>{children}</>,
+    useAuth: () => ({ user: { _id: '123', username: 'testuser' }, loading: false, login: vi.fn(), logout: vi.fn() }),
+}));

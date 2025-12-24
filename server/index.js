@@ -51,6 +51,10 @@ const syncRoutes = require('./routes/syncRoutes');
 const automationRoutes = require('./routes/automationRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 
+app.get('/', (req, res) => {
+    res.send('Notinix API is running');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 app.use('/api/import', importRoutes);
