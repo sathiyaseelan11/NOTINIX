@@ -93,7 +93,6 @@ const Login = () => {
                     </form>
 
                     <div className="flex justify-center items-center mt-3 text-sm">
-                        <Link to="/forgot-password" className="text-[var(--muted-foreground)] hover:text-[var(--foreground)]">Forgot Password?</Link>
                     </div>
 
                     <p className="text-center text-muted mt-6 text-sm">

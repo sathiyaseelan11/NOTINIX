@@ -7,7 +7,6 @@ import { SocketProvider } from './context/SocketContext';
 import AICommandPalette from './components/AICommandPalette';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import ForgotPassword from './pages/ForgotPassword';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import NoteList from './pages/NoteList';
@@ -52,8 +51,7 @@ const AnimatedRoutes = () => {
         <Route path="/landing" element={<PageTransition><Landing /></PageTransition>} />
         <Route path="/login" element={<PageTransition><Login /></PageTransition>} />
         <Route path="/register" element={<PageTransition><Register /></PageTransition>} />
-        <Route path="/forgot-password" element={<PageTransition><ForgotPassword /></PageTransition>} />
-        <Route path="/forgot-password" element={<PageTransition><ForgotPassword /></PageTransition>} />
+
 
         {/* Protected Routes */}
         <Route path="/" element={<PrivateRoute><SidebarLayout /></PrivateRoute>}>
