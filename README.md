@@ -31,7 +31,7 @@ Notinix is an AI-powered note management platform designed to centralize your kn
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/notinix.git
+    git clone https://github.com/sathiyaseelan11/NOTINIX.git
     cd notinix
     ```
 
